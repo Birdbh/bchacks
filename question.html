@@ -20,6 +20,32 @@
         </div>
         <div class="bg-pink-400 text-blue-600 text-bold text-3xl border border-color-blue rounded-lg w-40 p-3 m-5 text-center  hover:text-blue-200 transition ease-in-out delay-15 hover:-translate-y-1 hover:scale-110 hover:bg-pink-600 duration-300"><a href="index.html">iRez</a></div>
     </div>
+    
+    <script>
+        function savefunc(){
+            var name = document.getElementById("name1").value;
+            var clean = document.getElementById("clean").value;
+            var time= document.getElementById("time").value;
+            var country = document.getElementById("country").value;
+            var data = [];
+            data.push(name);
+            data.push(clean);
+            data.push(time);
+            data.push(country);
+           
+
+            var data_string = JSON.stringify(data);
+            alert(data_string)
+
+            var file = new Blob([data_string],{type:"text"});
+           var anchor = document.createElement("a");
+           anchor.href = URL.createObjectURL(file);
+           anchor.download = "save.txt"
+           anchor.click();
+           
+
+        };
+    </script>
 
     </div>
         <div class="bg-pink-400 text-blue-600 text-bold text-3xl border border-color-blue rounded-lg m-4 p-3 text-center ">
